@@ -1,2 +1,10 @@
-﻿  main.cpp
+﻿  table.cpp
+C:\Users\dehla\Desktop\Visual Studio Projects\C++\Graphing Calculator\Graphing Calculator\table.cpp(16,42): warning C4267: 'initializing': conversion from 'size_t' to 'uint8_t', possible loss of data
+C:\Users\dehla\Desktop\Visual Studio Projects\C++\Graphing Calculator\Graphing Calculator\table.cpp(17,38): warning C4267: 'initializing': conversion from 'size_t' to 'uint8_t', possible loss of data
+C:\Users\dehla\Desktop\Visual Studio Projects\C++\Graphing Calculator\Graphing Calculator\table.cpp(19,42): warning C4267: 'initializing': conversion from 'size_t' to 'uint8_t', possible loss of data
+C:\Users\dehla\Desktop\Visual Studio Projects\C++\Graphing Calculator\Graphing Calculator\table.cpp(20,38): warning C4267: 'initializing': conversion from 'size_t' to 'uint8_t', possible loss of data
+C:\Users\dehla\Desktop\Visual Studio Projects\C++\Graphing Calculator\Graphing Calculator\table.cpp(26,42): warning C4267: 'initializing': conversion from 'size_t' to 'uint8_t', possible loss of data
+C:\Users\dehla\Desktop\Visual Studio Projects\C++\Graphing Calculator\Graphing Calculator\table.cpp(27,38): warning C4267: 'initializing': conversion from 'size_t' to 'uint8_t', possible loss of data
+C:\Users\dehla\Desktop\Visual Studio Projects\C++\Graphing Calculator\Graphing Calculator\table.cpp(33,41): warning C4267: 'initializing': conversion from 'size_t' to 'uint8_t', possible loss of data
+C:\Users\dehla\Desktop\Visual Studio Projects\C++\Graphing Calculator\Graphing Calculator\table.cpp(36,11): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   Graphing Calculator.vcxproj -> C:\Users\dehla\Desktop\Visual Studio Projects\C++\Graphing Calculator\x64\Debug\Graphing Calculator.exe

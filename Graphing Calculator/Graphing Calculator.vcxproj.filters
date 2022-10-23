@@ -21,9 +21,15 @@
     <ClCompile Include="plane.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="table.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="plane.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="table.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
