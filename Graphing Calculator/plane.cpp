@@ -1,28 +1,47 @@
 #include "plane.h"
+
 #include <iostream>
 
-plane::plane(int inputType)
+void plane::generatePoints()
 {
-	_inputType = inputType;
-}
+	SetConsoleTextAttribute(_hConsole, 12);
+	for (int i = 0; i < 10; i++) {
+		int _x = 0, _y = 0;
 
-void plane::generatePlane()
-{
-	if (_inputType != 1) { //from functions
-		//_func.function = function;
-		switch (_inputType) {
-		default:
-		case 2: // linear
+		if (x[i] < 0) {
+			if (x[i] == -10)
+				_x = 0;
+			else if (x[i] >= -10)
+				_x = 1 + 2 * (abs(x[i]) - (abs(x[i]) - (10 - abs(x[i]))));
+		}
+		else if (x[i] == 0) 
+			_x = 21;
+		else if (x[i] > 0) {
+			if (x[i] == 1)
+				_x = 23;
+			else if (x[i] <= 10)
+				_x = 21 + 2 * x[i];
+		}
+		
+		if (y[i] < 0) {
+			if (y[i] == -1)
+				_y = 15;
+			else if (y[i] >= -6)
+				_y = 13 + 2 * abs(y[i]);
+		}
+		else if (y[i] == 0)
+			_y = 13;
+		else if (y[i] > 0 && y[i] <= 6)
+			_y = (6 - y[i] + 1) * 2 - 1;
 
-			break;
-		case 3: // Quadratic
-			break;
-		case 4: // Cubic
-			break;
-		case 5: // Exponential
-			break;
+		if ((x[i] >= -10 && x[i] <= 10) && (y[i] >= -6 && y[i] <= 6)) {
+			COORD pos = { _x, _y };
+			SetConsoleCursorPosition(_hConsole, pos);
+			WriteConsole(_hConsole, "*", 5, NULL, NULL);
 		}
 	}
+	SetConsoleTextAttribute(_hConsole, 15);
+
 }
 
 void plane::displayPlane()

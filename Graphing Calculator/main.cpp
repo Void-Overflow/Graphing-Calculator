@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
+
 #include "plane.h"
+#include "table.h"
 
 int main() {
 
@@ -83,15 +85,21 @@ int main() {
 				tbl.showTable();
 			}
 			else if (outputType == 2) {
-				plane coordPlane(inputType);
+				plane coordPlane;
 
 				for (int i = 0; i < 10; i++) {
 					coordPlane.x[i] = tbl.x[i];
 					coordPlane.y[i] = tbl.y[i];
 				}
 
-				coordPlane.generatePlane();
 				coordPlane.displayPlane();
+				coordPlane.generatePoints();
+
+				for(int i = 0; i < 30; i++)
+					std::cout << std::endl;
+
+				std::cout << "Slope : " << tbl.slope.first << "/" << tbl.slope.second << '\n' << "y-int " << ": " << tbl.yInt << std::endl;
+				tbl.showTable();
 			}
 		}
 
