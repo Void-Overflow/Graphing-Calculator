@@ -27,15 +27,15 @@ void plane::generatePoints()
 			if (y[i] == -1)
 				_y = 15;
 			else if (y[i] >= -6)
-				_y = 13 + 2 * abs(y[i]);
+				_y = 14 + 2 * abs(y[i]);
 		}
 		else if (y[i] == 0)
-			_y = 13;
+			_y = 14;
 		else if (y[i] > 0 && y[i] <= 6)
-			_y = (6 - y[i] + 1) * 2 - 1;
+			_y = (6 - y[i] + 1) * 2;
 
 		if ((x[i] >= -10 && x[i] <= 10) && (y[i] >= -6 && y[i] <= 6)) {
-			COORD pos = { _x, _y };
+			COORD pos = { _x, _y - 1 };
 			SetConsoleCursorPosition(_hConsole, pos);
 			WriteConsole(_hConsole, "*", 5, NULL, NULL);
 		}

@@ -5,7 +5,6 @@
 #include "table.h"
 
 int main() {
-
 	while (true) {
 		MENU:
 		int inputType, outputType;
@@ -27,7 +26,6 @@ int main() {
 			std::cout << "---------------------------------------\n\n\nOutput Method:\n";
 			std::cout << "1) Function\n";
 			std::cout << "2) Graph\n";
-			std::cout << "3) Both\n\n";
 			std::cout << "9) Back to Previous Page\n\n";
 
 			std::cin >> outputType;
@@ -81,7 +79,19 @@ int main() {
 
 			system("cls");
 			if (outputType == 6) {
-				std::cout << "Slope : " << tbl.slope.first << "/" << tbl.slope.second << '\n' << "y-int " << ": " << tbl.yInt << std::endl;
+				std::cout << "Function : " << tbl.function << '\n' << "Slope : " << tbl.slope.first << "/" << tbl.slope.second << '\n' << "y-int " << ": " << tbl.yInt << std::endl;
+				tbl.showTable();
+			}
+			else if (outputType == 5) {
+				std::cout << "Please enter the output file name: ";
+				std::string file;
+				std::getline(std::cin, file);
+
+				tbl.createFile(file);
+
+				std::cout << std::endl << std::endl << "A file has successfully been created under \\Graphing Calculator\\Graphing Calculator\\" + file + ".csv\n\n"
+					 + "File Information \n--------------------------------------- \n\n\n";
+				std::cout << "Function : " << tbl.function << '\n' << "Slope : " << tbl.slope.first << "/" << tbl.slope.second << '\n' << "y-int " << ": " << tbl.yInt << std::endl << std::endl;
 				tbl.showTable();
 			}
 			else if (outputType == 2) {
@@ -98,8 +108,60 @@ int main() {
 				for(int i = 0; i < 30; i++)
 					std::cout << std::endl;
 
-				std::cout << "Slope : " << tbl.slope.first << "/" << tbl.slope.second << '\n' << "y-int " << ": " << tbl.yInt << std::endl;
+				std::cout << "Function : " << tbl.function << '\n' << "Slope : " << tbl.slope.first << "/" << tbl.slope.second << '\n' << "y-int " << ": " << tbl.yInt << std::endl;
 				tbl.showTable();
+			}
+		}
+
+		else if (inputType == 1) {
+			std::cin.ignore();
+			FILEINPUT:
+			std::cout << "Please enter the file name: ";
+
+			std::string file;
+			std::getline(std::cin, file);
+
+			table tbl(inputType);
+			tbl.fileName = file;
+			
+			if (tbl.generateTable()) {
+				std::cout << "Couldn't the file, " << file << ", under the \"\\Graphing Calculator\\Graphing Calculator\\Spreadsheet Input\\\" Folder \n";
+
+				std::string continueStr;
+				std::cin.ignore();
+				std::getline(std::cin, continueStr);
+
+				system("cls");
+				goto FILEINPUT;
+			}
+			else {
+				system("cls");
+				if (outputType == 1) {
+					std::cout << "Function : " << tbl.function
+						<< '\n' << "Function Type : " << tbl.functionType << '\n'
+						<< "Slope : " << tbl.slope.first << "/" << tbl.slope.second << '\n'
+						<< "y-int " << ": " << tbl.yInt << std::endl;
+				}
+				else if (outputType == 2) {
+					plane coordPlane;
+
+					for (int i = 0; i < 10; i++) {
+						coordPlane.x[i] = tbl.x[i];
+						coordPlane.y[i] = tbl.y[i];
+					}
+
+					coordPlane.displayPlane();
+					coordPlane.generatePoints();
+
+					for (int i = 0; i < 30; i++)
+						std::cout << std::endl;
+
+					std::cout << "Function : " << tbl.function
+						<< '\n' << "Function Type : " << tbl.functionType << '\n' 
+						<< "Slope : " << tbl.slope.first << "/" << tbl.slope.second << '\n' 
+						<< "y-int " << ": " << tbl.yInt << std::endl;
+					tbl.showTable();
+				}
 			}
 		}
 
