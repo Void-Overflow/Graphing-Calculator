@@ -15,7 +15,6 @@ int main() {
 		std::cout << "1) Spread Sheet\n\n";
 		std::cout << "2) Linear Function\n";
 		std::cout << "3) Quadratic Function\n";
-		std::cout << "4) Cubic Function\n";
 		std::cout << "5) Exponential Function\n\n";
 		std::cin >> inputType;
 
@@ -63,7 +62,7 @@ int main() {
 			break;
 		}
 		system("cls");
-		if (inputType == 2) {
+		if (inputType != 1) {
 			std::cout << "Please enter your function: ";
 
 			std::string functionIn;
@@ -79,19 +78,15 @@ int main() {
 
 			system("cls");
 			if (outputType == 6) {
-				std::cout << "Function : " << tbl.function << '\n' << "Slope : " << tbl.slope.first << "/" << tbl.slope.second << '\n' << "y-int " << ": " << tbl.yInt << std::endl;
-				tbl.showTable();
-			}
-			else if (outputType == 5) {
-				std::cout << "Please enter the output file name: ";
-				std::string file;
-				std::getline(std::cin, file);
-
-				tbl.createFile(file);
-
-				std::cout << std::endl << std::endl << "A file has successfully been created under \\Graphing Calculator\\Graphing Calculator\\" + file + ".csv\n\n"
-					 + "File Information \n--------------------------------------- \n\n\n";
-				std::cout << "Function : " << tbl.function << '\n' << "Slope : " << tbl.slope.first << "/" << tbl.slope.second << '\n' << "y-int " << ": " << tbl.yInt << std::endl << std::endl;
+				if (inputType == 2) // Linear
+					std::cout << "Function : " << tbl.function << '\n' << "Slope : " << tbl.slope.first << "/" << tbl.slope.second << '\n' << "y-int " << ": " << tbl.yInt << std::endl;
+				else if (inputType == 3) //Quadratic
+					std::cout << "Function : " << tbl.function << '\n'
+					<< "A : " << tbl.a << "; B : " << tbl.b << "; C : " << tbl.c << '\n'
+					<< "Vertex : " << tbl.vertex[0] << ", " << tbl.vertex[1] << '\n' << "X-Ints(Solutions based on table) : " << tbl.xInts[0] << ", " << tbl.xInts[1] << std::endl;
+				else if (inputType == 5) //Exponential
+					std::cout << "Function : " << tbl.function << '\n'
+					<< "A : " << tbl.a << "; B : " << tbl.b << "; C : " << tbl.c << '\n';
 				tbl.showTable();
 			}
 			else if (outputType == 2) {
@@ -108,7 +103,34 @@ int main() {
 				for(int i = 0; i < 30; i++)
 					std::cout << std::endl;
 
-				std::cout << "Function : " << tbl.function << '\n' << "Slope : " << tbl.slope.first << "/" << tbl.slope.second << '\n' << "y-int " << ": " << tbl.yInt << std::endl;
+				if (inputType == 2) // Linear
+					std::cout << "Function : " << tbl.function << '\n' << "Slope : " << tbl.slope.first << "/" << tbl.slope.second << '\n' << "y-int " << ": " << tbl.yInt << std::endl;
+				else if (inputType == 3) //Quadratic
+					std::cout << "Function : " << tbl.function << '\n'
+					<< "A : " << tbl.a << "; B : " << tbl.b << "; C : " << tbl.c << '\n'
+					<< "Vertex : " << tbl.vertex[0] << ", " << tbl.vertex[1] << '\n' << "X-Ints(Solutions based on table) : " << tbl.xInts[0] << ", " << tbl.xInts[1] << std::endl;
+				else if (inputType == 5) //Exponential
+					std::cout << "Function : " << tbl.function << '\n'
+					<< "A : " << tbl.a << "; B : " << tbl.b << "; C : " << tbl.c << '\n';
+				tbl.showTable();
+			}
+			else if (outputType == 5) {
+				std::cout << "Please enter the output file name: ";
+				std::string file;
+				std::getline(std::cin, file);
+
+				tbl.createFile(file);
+				std::cout << std::endl << std::endl << "A file has successfully been created under \\Graphing Calculator\\Graphing Calculator\\" + file + ".csv\n\n"
+					+ "File Information \n--------------------------------------- \n\n\n";
+				if (tbl.functionType == "Linear") // Linear
+					std::cout << "Function : " << tbl.function << '\n' << "Slope : " << tbl.slope.first << "/" << tbl.slope.second << '\n' << "y-int " << ": " << tbl.yInt << std::endl;
+				else if (tbl.functionType == "Quadratic") //Quadratic
+					std::cout << "Function : " << tbl.function << '\n'
+					<< "A : " << tbl.a << "; B : " << tbl.b << "; C : " << tbl.c << '\n'
+					<< "Vertex : " << tbl.vertex[0] << ", " << tbl.vertex[1] << '\n' << "X-Ints(Solutions based on table) : " << tbl.xInts[0] << ", " << tbl.xInts[1] << std::endl;
+				else if (tbl.functionType == "Exponential") //Exponential
+					std::cout << "Function : " << tbl.function << '\n'
+					<< "A : " << tbl.a << "; B : " << tbl.b << "; C : " << tbl.c << '\n';
 				tbl.showTable();
 			}
 		}
@@ -137,10 +159,17 @@ int main() {
 			else {
 				system("cls");
 				if (outputType == 1) {
-					std::cout << "Function : " << tbl.function
-						<< '\n' << "Function Type : " << tbl.functionType << '\n'
-						<< "Slope : " << tbl.slope.first << "/" << tbl.slope.second << '\n'
-						<< "y-int " << ": " << tbl.yInt << std::endl;
+					if (tbl.functionType == "Linear") // Linear
+						std::cout << "Function : " << tbl.function << '\n' << '\n' << "Function Type : " << tbl.functionType << '\n' <<
+						"Slope : " << tbl.slope.first << "/" << tbl.slope.second << '\n' << "y-int " << ": " << tbl.yInt << std::endl;
+					else if (tbl.functionType == "Quadratic") //Quadratic
+						std::cout << "Function : " << tbl.function << '\n'
+						<< "Function Type : " << tbl.functionType << '\n'
+						<< "A : " << tbl.a << "; B : " << tbl.b << "; C : " << tbl.c << '\n'
+						<< "Vertex : " << tbl.vertex[0] << ", " << tbl.vertex[1] << '\n' << "X-Ints(Solutions based on table) : " << tbl.xInts[0] << ", " << tbl.xInts[1] << std::endl;
+					else if (tbl.functionType == "Exponential") //Exponential
+						std::cout << "Function : " << tbl.function << '\n'
+						<< "A : " << tbl.a << "; B : " << tbl.b << "; C : " << tbl.c << '\n';
 				}
 				else if (outputType == 2) {
 					plane coordPlane;
@@ -156,10 +185,17 @@ int main() {
 					for (int i = 0; i < 30; i++)
 						std::cout << std::endl;
 
-					std::cout << "Function : " << tbl.function
-						<< '\n' << "Function Type : " << tbl.functionType << '\n' 
-						<< "Slope : " << tbl.slope.first << "/" << tbl.slope.second << '\n' 
-						<< "y-int " << ": " << tbl.yInt << std::endl;
+					if (tbl.functionType == "Linear") // Linear
+						std::cout << "Function : " << tbl.function << '\n' <<'\n' << "Function Type : " << tbl.functionType << '\n' <<
+						"Slope : " << tbl.slope.first << "/" << tbl.slope.second << '\n' << "y-int " << ": " << tbl.yInt << std::endl;
+					else if (tbl.functionType == "Quadratic") //Quadratic
+						std::cout << "Function : " << tbl.function << '\n'
+						<< "Function Type : " << tbl.functionType << '\n' 
+						<< "A : " << tbl.a << "; B : " << tbl.b << "; C : " << tbl.c << '\n'
+						<< "Vertex : " << tbl.vertex[0] << ", " << tbl.vertex[1] << '\n' << "X-Ints(Solutions based on table) : " << tbl.xInts[0] << ", " << tbl.xInts[1] << std::endl;
+					else if (tbl.functionType == "Exponential") //Exponential
+						std::cout << "Function : " << tbl.function << '\n'
+						<< "A : " << tbl.a << "; B : " << tbl.b << "; C : " << tbl.c << '\n';
 					tbl.showTable();
 				}
 			}

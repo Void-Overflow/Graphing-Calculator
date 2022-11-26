@@ -1,8 +1,24 @@
-﻿  plane.cpp
-C:\Users\dehla\Desktop\Visual Studio Projects\C++\Graphing Calculator\Graphing Calculator\plane.cpp(15,12): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\dehla\Desktop\Visual Studio Projects\C++\Graphing Calculator\Graphing Calculator\plane.cpp(23,13): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\dehla\Desktop\Visual Studio Projects\C++\Graphing Calculator\Graphing Calculator\plane.cpp(30,13): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\dehla\Desktop\Visual Studio Projects\C++\Graphing Calculator\Graphing Calculator\plane.cpp(35,24): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\dehla\Desktop\Visual Studio Projects\C++\Graphing Calculator\Graphing Calculator\plane.cpp(38,18): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-C:\Users\dehla\Desktop\Visual Studio Projects\C++\Graphing Calculator\Graphing Calculator\plane.cpp(38,25): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+﻿  table.cpp
+C:\Users\dehla\Desktop\Visual Studio Projects\C++\Graphing Calculator\Graphing Calculator\table.cpp(48,41): warning C4267: 'initializing': conversion from 'size_t' to 'uint8_t', possible loss of data
+C:\Users\dehla\Desktop\Visual Studio Projects\C++\Graphing Calculator\Graphing Calculator\table.cpp(50,11): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\dehla\Desktop\Visual Studio Projects\C++\Graphing Calculator\Graphing Calculator\table.cpp(89,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\dehla\Desktop\Visual Studio Projects\C++\Graphing Calculator\Graphing Calculator\table.cpp(97,54): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\dehla\Desktop\Visual Studio Projects\C++\Graphing Calculator\Graphing Calculator\table.cpp(108,31): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\dehla\Desktop\Visual Studio Projects\C++\Graphing Calculator\Graphing Calculator\table.cpp(138,24): warning C4244: '=': conversion from 'float' to '_Ty1', possible loss of data
+          with
+          [
+              _Ty1=int
+          ]
+C:\Users\dehla\Desktop\Visual Studio Projects\C++\Graphing Calculator\Graphing Calculator\table.cpp(139,25): warning C4244: '=': conversion from 'float' to '_Ty2', possible loss of data
+          with
+          [
+              _Ty2=int
+          ]
+C:\Users\dehla\Desktop\Visual Studio Projects\C++\Graphing Calculator\Graphing Calculator\table.cpp(140,59): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\dehla\Desktop\Visual Studio Projects\C++\Graphing Calculator\Graphing Calculator\table.cpp(150,14): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\dehla\Desktop\Visual Studio Projects\C++\Graphing Calculator\Graphing Calculator\table.cpp(151,27): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\dehla\Desktop\Visual Studio Projects\C++\Graphing Calculator\Graphing Calculator\table.cpp(154,32): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\dehla\Desktop\Visual Studio Projects\C++\Graphing Calculator\Graphing Calculator\table.cpp(157,55): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\dehla\Desktop\Visual Studio Projects\C++\Graphing Calculator\Graphing Calculator\table.cpp(160,14): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\dehla\Desktop\Visual Studio Projects\C++\Graphing Calculator\Graphing Calculator\table.cpp(164,16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
   Graphing Calculator.vcxproj -> C:\Users\dehla\Desktop\Visual Studio Projects\C++\Graphing Calculator\x64\Debug\Graphing Calculator.exe
